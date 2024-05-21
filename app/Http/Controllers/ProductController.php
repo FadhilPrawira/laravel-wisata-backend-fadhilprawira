@@ -14,9 +14,11 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
+        // Get all products. When keyword is available, filter the products by name. Order the products by ID in descending order
         $products = Product::when($request->keyword, function ($query) use ($request) {
             $query->where('name', 'like', "%{$request->keyword}%");
         })->orderBy('id', 'desc')->paginate(10);
+
         return view('pages.products.index', compact('products'));
     }
 
@@ -25,7 +27,9 @@ class ProductController extends Controller
      */
     public function create()
     {
+        // Get all categories
         $categories = Category::orderBy('name', 'ASC')->get();
+
         return view('pages.products.create', compact('categories'));
     }
 
@@ -34,26 +38,26 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
+        // Validate the request
         $request->validate([
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
             'stock' => 'required',
             'category_id' => 'required',
-
             'status' => 'required',
             'criteria' => 'required',
             'favorite' => 'required|boolean',
-
         ]);
+
+        // Create a new product
         $product = new Product();
+
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
         $product->stock = $request->stock;
         $product->category_id = $request->category_id;
-
         $product->status = $request->status;
         $product->criteria = $request->criteria;
         $product->favorite = $request->favorite;
@@ -88,7 +92,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        // Get all categories
         $categories = Category::orderBy('name', 'ASC')->get();
+
         return view('pages.products.edit', compact('product', 'categories'));
     }
 
@@ -97,27 +103,26 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-
+        // Validate the request
         $request->validate([
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
             'stock' => 'required',
             'category_id' => 'required',
-
             'status' => 'required',
             'criteria' => 'required',
             'favorite' => 'required|boolean',
-
         ]);
+
+        // Find product by ID
         $product = Product::find($id);
+
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
         $product->stock = $request->stock;
         $product->category_id = $request->category_id;
-
         $product->status = $request->status;
         $product->criteria = $request->criteria;
         $product->favorite = $request->favorite;
@@ -146,11 +151,17 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        // delete image
+        // Find product by ID
+        $product = Product::find($id);
+
+        // Delete image
         Storage::delete('public/' . $product->image);
+
+        // Delete product
         $product->delete();
+
         return redirect()->route('products.index')->with('success', 'Product deleted successfully');
     }
 }
