@@ -16,11 +16,11 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Advanced Forms</h1>
+                <h1>Create Product</h1>
                 <div class="section-header-breadcrumb">
-                    <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                    <div class="breadcrumb-item"><a href="#">Forms</a></div>
-                    <div class="breadcrumb-item">Product</div>
+                    <div class="breadcrumb-item active"><a href="{{ route('home') }}">Dashboard</a></div>
+                    <div class="breadcrumb-item"><a href="{{ route('products.index') }}">Products</a></div>
+                    <div class="breadcrumb-item">Create Product</div>
                 </div>
             </div>
 
@@ -31,9 +31,7 @@
                 <div class="card">
                     <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="card-header">
-                            <h4>Input Text</h4>
-                        </div>
+
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Name</label>
@@ -151,12 +149,13 @@
                                 <label class="form-label">Is Favorite</label>
                                 <div class="selectgroup selectgroup-pills">
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="favorite" value="1" class="selectgroup-input"
-                                            checked="">
+                                        <input type="radio" name="is_favorite" value="1"
+                                            class="selectgroup-input" checked="">
                                         <span class="selectgroup-button">Yes</span>
                                     </label>
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="favorite" value="0" class="selectgroup-input">
+                                        <input type="radio" name="is_favorite" value="0"
+                                            class="selectgroup-input">
                                         <span class="selectgroup-button">No</span>
                                     </label>
                                 </div>

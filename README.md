@@ -10,19 +10,22 @@ Laravel Wisata Backend is a web application and API for a Flutter application th
         <a href="https://laragon.org/download/index.html" target="_blank">Laragon 6.0.0</a>.
     </li>
     <li>
-        <a href="https://www.php.net/" target="_blank">PHP 8.3.7</a>.
+        <a href="https://www.php.net/" target="_blank">PHP 8.3.9</a>.
+    </li>
+    <li>
+        <a href="https://getcomposer.org/download/" target="_blank">Composer 2.7.7</a>.
     </li>
     <li>
         <a href="https://downloads.mysql.com/archives/community/" target="_blank">MySQL 8.0.30</a>.
     </li>
      <li>
-        <a href="https://www.apachelounge.com/download/" target="_blank">Apache 2.4.59</a>.
+        <a href="https://www.apachelounge.com/download/" target="_blank">Apache 2.4.61</a>.
     </li>
     <li>
-        <a href="https://laravel.com/docs/11.x/" target="_blank">Laravel 11.7.0</a>.
+        <a href="https://laravel.com/docs/11.x/" target="_blank">Laravel 11.15.0</a>.
     </li>
     <li>
-        <a href="https://laravel.com/docs/11.x/fortify" target="_blank">Laravel Fortify 1.21</a> for login and logout.
+        <a href="https://laravel.com/docs/11.x/fortify" target="_blank">Laravel Fortify 1.21.5</a> for login and logout.
     </li>
 </ul>
 
@@ -39,19 +42,19 @@ Laravel Wisata Backend is a web application and API for a Flutter application th
     </thead>
     <tbody>
         <tr>
-            <td><b>testadmin@example.com<b></td>
+            <td><b>admin@example.com<b></td>
             <td>12345678</td>
             <td>Test Admin</td>
             <td>admin</td>
         </tr>
         <tr>
-            <td><b>teststaff@example.com</b></td>
+            <td><b>staff@example.com</b></td>
             <td>12345678</td>
             <td>Test Staff</td>
             <td>staff</td>
         </tr>
         <tr>
-            <td><b>testuser@example.com</b></td>
+            <td><b>user@example.com</b></td>
             <td>12345678</td>
             <td>Test User</td>
             <td>user</td>
@@ -63,7 +66,11 @@ Laravel Wisata Backend is a web application and API for a Flutter application th
 
 Create a new project folder, cd into the folder
 
-`git clone https://github.com/FadhilPrawira/laravel-wisata-backend-fadhilprawira.git .`
+`git clone https://github.com/FadhilPrawira/laravel-wisata-backend-fadhilprawira.git`
+
+`cd laravel-wisata-backend-fadhilprawira`
+
+Copy the .env.example file to .env
 
 `cp .env.example .env`
 
@@ -79,7 +86,20 @@ Make the needed changes regarding database connection, faker locale, timezone. B
 
 `php artisan db:seed`
 
-To run, use `php artisan serve`
+To run, use `php artisan serve` or `php artisan serve --host=YOUR_IP_ADDRESS --port=YOUR_PORT_NUMBER`
+
+Access the website in your browser at `http://localhost:8000` or `http://YOUR_IP_ADDRESS:YOUR_PORT_NUMBER`
+
+## API Documentation
+Look at folder `docs` for API documentation in Postman Collection v2.1 format.
+
+
+
+## TODO
+- Define every role permission
+- Add Laravel Spatie for role permission/authorization
+- Make sure column name in Laravel same as in Flutter SQLite
+- Throw column name that ambiguous in Laravel and Flutter SQLite
 
 
 ## Contact me

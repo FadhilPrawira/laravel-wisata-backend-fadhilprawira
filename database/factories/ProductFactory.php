@@ -17,21 +17,6 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            //  $table->string('name');
-
-            // // description
-            // $table->text('description')->nullable();
-            // $table->integer('price');
-            // $table->integer('stock');
-            // $table->foreignId('category_id')->constrained();
-            // $table->string('image')->nullable();
-            // // status
-            // $table->enum('status', ['draft', 'published', 'archived'])->default('published');
-            // // enum  criteria
-            // $table->enum('criteria', ['perorangan', 'rombongan'])->default('perorangan');
-            // // favorite
-            // $table->boolean('favorite')->default(false);
-
             'name' => $this->faker->word,
             'description' => $this->faker->sentence(),
             'price' => $this->faker->randomFloat(2, 1, 100),
@@ -40,8 +25,7 @@ class ProductFactory extends Factory
             'image' => $this->faker->imageUrl(640, 480, 'animals', true),
             'status' =>  'published',
             'criteria' => $this->faker->randomElement(['perorangan', 'rombongan']),
-            'favorite' => $this->faker->boolean,
-
+            'is_favorite' => $this->faker->boolean,
         ];
     }
 }

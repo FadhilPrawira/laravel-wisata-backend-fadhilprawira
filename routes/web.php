@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController; // Import the UserController class
 
@@ -11,10 +13,16 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', function () {
-        return view('pages.dashboard');
-    })->name('home');
+    // Route::get('/home', function () {
+    //     return view('pages.dashboard');
+    // })->name('home');
+
+    Route::get('/home', [DashboardController::class, 'index'])->name('home');
     Route::resource('users', UserController::class);
     Route::resource('categories', CategoryController::class);
     Route::resource('products', ProductController::class);
+    Route::resource('orders', OrderController::class);
+
+    // Profile
+    Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 });

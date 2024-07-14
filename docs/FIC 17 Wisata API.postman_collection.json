@@ -1,0 +1,870 @@
+{
+	"info": {
+		"_postman_id": "b4d76ce8-200e-4c52-b61f-6675a9a8a55d",
+		"name": "FIC 17 Wisata API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36926352"
+	},
+	"item": [
+		{
+			"name": "User Data",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@example.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|cR8t0AvuY4mmiGwm5tpcdQ1rNwwqtr8kc7iK20oS03922b4d",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get authenticated user info Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|fWWUVzUhXCZXOiteMLcaKrcTBVCv3dnlql8nSTdva6639e36",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category Data",
+			"item": [
+				{
+					"name": "Get all category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 7|rsEIf2npJMihSmKNQkaZUsuuzGZ5VG59v5bdHaum42d9f1a9",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api-categories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Data",
+			"item": [
+				{
+					"name": "Get all product",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 7|rsEIf2npJMihSmKNQkaZUsuuzGZ5VG59v5bdHaum42d9f1a9",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api-products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific product detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|u35RbnH0sbp9wAZoQrAf8cwBEIY4UOwiYq2VkPEe392f9aaa",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api-products/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 7|rsEIf2npJMihSmKNQkaZUsuuzGZ5VG59v5bdHaum42d9f1a9",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Parkir Motor\",\r\n\"price\":2000,\r\n\"stock\":999,\r\n\"category_id\":1,\r\n\"status\":\"published\",\r\n\"criteria\":\"perorangan\",\r\n\"is_favorite\":1}"
+						},
+						"url": {
+							"raw": "{{url}}/api-products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|u35RbnH0sbp9wAZoQrAf8cwBEIY4UOwiYq2VkPEe392f9aaa",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "status",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "criteria",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "is_favorite",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api-products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|u35RbnH0sbp9wAZoQrAf8cwBEIY4UOwiYq2VkPEe392f9aaa",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api-products/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order Data",
+			"item": [
+				{
+					"name": "Sandbox Midtrans Ewallet: Create Payment",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payment_type\": \"gopay\",\r\n    \"transaction_details\": {\r\n        \"gross_amount\": 12145,\r\n        \"order_id\": \"test-transaction-54321FIC17coba\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.sandbox.midtrans.com/v2/charge",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sandbox",
+								"midtrans",
+								"com"
+							],
+							"path": [
+								"v2",
+								"charge"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic TWlkLXNlcnZlci1LWFF6QWFsZlN3dldzdnVZTlRaSGF0YVY6",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payment_type\": \"gopay\",\r\n    \"transaction_details\": {\r\n        \"gross_amount\": 12145,\r\n        \"order_id\": \"test-transaction-54321FIC17coba\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.sandbox.midtrans.com/v2/charge",
+									"protocol": "https",
+									"host": [
+										"api",
+										"sandbox",
+										"midtrans",
+										"com"
+									],
+									"path": [
+										"v2",
+										"charge"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 12 Jul 2024 09:24:14 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "content-length",
+									"value": "953"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "via",
+									"value": "flip/flop"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15724800; includeSubDomains"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": \"201\",\n    \"status_message\": \"GoPay transaction is created\",\n    \"transaction_id\": \"b4f1f710-db6e-4fff-b493-4554592e8fb5\",\n    \"order_id\": \"test-transaction-54321FIC17coba\",\n    \"merchant_id\": \"G176285257\",\n    \"gross_amount\": \"12145.00\",\n    \"currency\": \"IDR\",\n    \"payment_type\": \"gopay\",\n    \"transaction_time\": \"2024-07-12 16:24:13\",\n    \"transaction_status\": \"pending\",\n    \"fraud_status\": \"accept\",\n    \"actions\": [\n        {\n            \"name\": \"generate-qr-code\",\n            \"method\": \"GET\",\n            \"url\": \"https://api.sandbox.midtrans.com/v2/gopay/b4f1f710-db6e-4fff-b493-4554592e8fb5/qr-code\"\n        },\n        {\n            \"name\": \"deeplink-redirect\",\n            \"method\": \"GET\",\n            \"url\": \"https://simulator.sandbox.midtrans.com/gopay/partner/app/payment-pin?id=1c611d54-c5e1-4486-8cc2-c9346ff6e1bc\"\n        },\n        {\n            \"name\": \"get-status\",\n            \"method\": \"GET\",\n            \"url\": \"https://api.sandbox.midtrans.com/v2/b4f1f710-db6e-4fff-b493-4554592e8fb5/status\"\n        },\n        {\n            \"name\": \"cancel\",\n            \"method\": \"POST\",\n            \"url\": \"https://api.sandbox.midtrans.com/v2/b4f1f710-db6e-4fff-b493-4554592e8fb5/cancel\"\n        }\n    ],\n    \"expiry_time\": \"2024-07-12 16:39:13\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Sandbox Midtrans Ewallet: Get Payment Status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "SB-Mid-server-LjWAOdf_DcdUE8Tc4D1bSSp6",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic TWlkLXNlcnZlci1LWFF6QWFsZlN3dldzdnVZTlRaSGF0YVY6",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payment_type\": \"gopay\",\r\n    \"transaction_details\": {\r\n        \"gross_amount\": 12145,\r\n        \"order_id\": \"test-transaction-54321FIC17\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.sandbox.midtrans.com/v2/b4f1f710-db6e-4fff-b493-4554592e8fb5/status",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sandbox",
+								"midtrans",
+								"com"
+							],
+							"path": [
+								"v2",
+								"b4f1f710-db6e-4fff-b493-4554592e8fb5",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "payment pending",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic TWlkLXNlcnZlci1LWFF6QWFsZlN3dldzdnVZTlRaSGF0YVY6",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payment_type\": \"gopay\",\r\n    \"transaction_details\": {\r\n        \"gross_amount\": 12145,\r\n        \"order_id\": \"test-transaction-54321FIC17\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.sandbox.midtrans.com/v2/b4f1f710-db6e-4fff-b493-4554592e8fb5/status",
+									"protocol": "https",
+									"host": [
+										"api",
+										"sandbox",
+										"midtrans",
+										"com"
+									],
+									"path": [
+										"v2",
+										"b4f1f710-db6e-4fff-b493-4554592e8fb5",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 12 Jul 2024 09:24:47 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "content-length",
+									"value": "543"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "via",
+									"value": "flip/flop"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15724800; includeSubDomains"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"transaction_time\": \"2024-07-12 16:24:13\",\n    \"gross_amount\": \"12145.00\",\n    \"currency\": \"IDR\",\n    \"order_id\": \"test-transaction-54321FIC17coba\",\n    \"payment_type\": \"gopay\",\n    \"signature_key\": \"34af1d258f6e2320a5533b86d681453ed9ba6b8e9a7abf7cbc10a8c788d22cc594ecb732b69c9b1873d5eacd98f175475b841a47b612e6be4d17f5db75b3730e\",\n    \"status_code\": \"201\",\n    \"transaction_id\": \"b4f1f710-db6e-4fff-b493-4554592e8fb5\",\n    \"transaction_status\": \"pending\",\n    \"fraud_status\": \"accept\",\n    \"expiry_time\": \"2024-07-12 16:39:13\",\n    \"status_message\": \"Success, transaction is found\",\n    \"merchant_id\": \"G176285257\"\n}"
+						},
+						{
+							"name": "payment success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic TWlkLXNlcnZlci1LWFF6QWFsZlN3dldzdnVZTlRaSGF0YVY6",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payment_type\": \"gopay\",\r\n    \"transaction_details\": {\r\n        \"gross_amount\": 12145,\r\n        \"order_id\": \"test-transaction-54321FIC17\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.sandbox.midtrans.com/v2/b4f1f710-db6e-4fff-b493-4554592e8fb5/status",
+									"protocol": "https",
+									"host": [
+										"api",
+										"sandbox",
+										"midtrans",
+										"com"
+									],
+									"path": [
+										"v2",
+										"b4f1f710-db6e-4fff-b493-4554592e8fb5",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 12 Jul 2024 09:25:30 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "content-length",
+									"value": "586"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "via",
+									"value": "flip/flop"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15724800; includeSubDomains"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"transaction_time\": \"2024-07-12 16:24:13\",\n    \"gross_amount\": \"12145.00\",\n    \"currency\": \"IDR\",\n    \"order_id\": \"test-transaction-54321FIC17coba\",\n    \"payment_type\": \"gopay\",\n    \"signature_key\": \"9288d139c00e6d4a88a9d73d7537cb49d635e9046124adee8741029b663e20c036ee49497dc517ff6d238ae7eb67d37107bedfa858ad887974b3a637d34c4b45\",\n    \"status_code\": \"200\",\n    \"transaction_id\": \"b4f1f710-db6e-4fff-b493-4554592e8fb5\",\n    \"transaction_status\": \"settlement\",\n    \"fraud_status\": \"accept\",\n    \"expiry_time\": \"2024-07-12 16:39:13\",\n    \"settlement_time\": \"2024-07-12 16:25:23\",\n    \"status_message\": \"Success, transaction is found\",\n    \"merchant_id\": \"G176285257\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Sandbox Midtrans Ewallet: Get QRIS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payment_type\": \"gopay\",\r\n    \"transaction_details\": {\r\n        \"gross_amount\": 12145,\r\n        \"order_id\": \"test-transaction-54321FIC17\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.sandbox.midtrans.com/v2/gopay/6e580483-5222-4236-8a3a-b24afdb65892/qr-code",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sandbox",
+								"midtrans",
+								"com"
+							],
+							"path": [
+								"v2",
+								"gopay",
+								"6e580483-5222-4236-8a3a-b24afdb65892",
+								"qr-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sync Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 7|rsEIf2npJMihSmKNQkaZUsuuzGZ5VG59v5bdHaum42d9f1a9",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transaction_time\":\"2024-07-14 21:24:22\",\r\n    \"total_price\":9000,\r\n    \"total_item\":2,\r\n    \"payment_amount\":20000,\r\n    \"cashier_id\":1,\r\n    \"cashier_name\":\"Admin\",\r\n    \"payment_method\":\"QRIS\",\r\n    \"order_items\":[\r\n        {\r\n            \"product_id\": 2,\r\n            \"price\":2000,\r\n            \"quantity\":2\r\n        },\r\n        {\r\n            \"product_id\": 26,\r\n            \"price\":2000,\r\n            \"quantity\":2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api-orders",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

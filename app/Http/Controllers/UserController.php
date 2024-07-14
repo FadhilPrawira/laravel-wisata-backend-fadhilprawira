@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+
+    // Profile
+    public function profile(Request $request)
+    {
+        // Return authenticated user
+        $profile = $request->user();
+
+        return view('pages.auth.profile', compact('profile'));
+    }
     /**
      * Display a listing of the resource.
      */

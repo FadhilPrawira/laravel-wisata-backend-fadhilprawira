@@ -15,11 +15,12 @@ class AuthController extends Controller
         // Validate the request
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required',
+            'password' => 'required|string',
         ], [
             'email.required' => 'Email is required',
             'email.email' => 'Email is not valid',
             'password.required' => 'Password is required',
+            'password.string' => 'Password must be a string',
         ]);
 
         // Search by email
@@ -30,7 +31,7 @@ class AuthController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'User not found'
-            ], 404);
+            ])->setStatusCode(404);
         }
 
         // Check password
@@ -38,7 +39,7 @@ class AuthController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'Password is incorrect'
-            ], 401);
+            ])->setStatusCode(401);
         }
 
         // Generate token
@@ -47,7 +48,7 @@ class AuthController extends Controller
         return response()->json([
             'token' => $token,
             'user' => $user
-        ]);
+        ])->setStatusCode(200);
     }
 
     // Logout
@@ -62,6 +63,6 @@ class AuthController extends Controller
         return response()->json([
             'status' => 'success',
             'message' => 'Logged out successfully'
-        ]);
+        ])->setStatusCode(200);
     }
 }

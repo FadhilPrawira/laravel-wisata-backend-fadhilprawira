@@ -47,7 +47,7 @@ class ProductController extends Controller
             'category_id' => 'required',
             'status' => 'required',
             'criteria' => 'required',
-            'favorite' => 'required|boolean',
+            'is_favorite' => 'required|boolean',
         ]);
 
         // Create a new product
@@ -60,7 +60,7 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->status = $request->status;
         $product->criteria = $request->criteria;
-        $product->favorite = $request->favorite;
+        $product->is_favorite = $request->is_favorite;
 
         $product->save();
 
@@ -77,14 +77,6 @@ class ProductController extends Controller
         }
 
         return redirect()->route('products.index')->with('success', 'Product created successfully.');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
     }
 
     /**
@@ -112,7 +104,7 @@ class ProductController extends Controller
             'category_id' => 'required',
             'status' => 'required',
             'criteria' => 'required',
-            'favorite' => 'required|boolean',
+            'is_favorite' => 'required|boolean',
         ]);
 
         // Find product by ID
@@ -125,7 +117,7 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->status = $request->status;
         $product->criteria = $request->criteria;
-        $product->favorite = $request->favorite;
+        $product->is_favorite = $request->is_favorite;
 
         $product->save();
 

@@ -16,26 +16,21 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Advanced Forms</h1>
+                <h1>Edit Product</h1>
                 <div class="section-header-breadcrumb">
-                    <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                    <div class="breadcrumb-item"><a href="#">Forms</a></div>
-                    <div class="breadcrumb-item">Products</div>
+                    <div class="breadcrumb-item active"><a href="{{ route('home') }}">Dashboard</a></div>
+                    <div class="breadcrumb-item"><a href="{{ route('products.index') }}">Products</a></div>
+                    <div class="breadcrumb-item">Edit Product</div>
                 </div>
             </div>
 
             <div class="section-body">
                 <h2 class="section-title">Products</h2>
-
-
-
                 <div class="card">
                     <form action="{{ route('products.update', $product) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div class="card-header">
-                            <h4>Input Text</h4>
-                        </div>
+
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Name</label>
@@ -158,13 +153,13 @@
                                 <label class="form-label w-100">Is Favorite</label>
                                 <div class="selectgroup selectgroup-pills">
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="favorite" value="1" class="selectgroup-input"
-                                            {{ $product->favorite == 1 ? 'checked' : '' }}>
+                                        <input type="radio" name="is_favorite" value="1"
+                                            class="selectgroup-input" {{ $product->is_favorite == 1 ? 'checked' : '' }}>
                                         <span class="selectgroup-button">Yes</span>
                                     </label>
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="favorite" value="0" class="selectgroup-input"
-                                            {{ $product->favorite == 0 ? 'checked' : '' }}>
+                                        <input type="radio" name="is_favorite" value="0"
+                                            class="selectgroup-input" {{ $product->is_favorite == 0 ? 'checked' : '' }}>
                                         <span class="selectgroup-button">No</span>
                                     </label>
                                 </div>

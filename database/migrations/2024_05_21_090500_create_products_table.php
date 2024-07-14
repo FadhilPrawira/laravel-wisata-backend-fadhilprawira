@@ -14,21 +14,16 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-
-            // description
             $table->text('description')->nullable();
             $table->integer('price');
             $table->integer('stock');
-            $table->foreignId('category_id')->constrained();
+            // Foreign key to categories table
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->string('image')->nullable();
-            // status
             $table->enum('status', ['draft', 'published', 'archived'])->default('published');
-            // enum  criteria
             $table->enum('criteria', ['perorangan', 'rombongan'])->default('perorangan');
-            // favorite
-            $table->boolean('favorite')->default(false);
-
-            $table->softDeletes();
+            $table->boolean('is_favorite')->default(false);
             $table->timestamps();
         });
     }
